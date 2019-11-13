@@ -1,0 +1,23 @@
+._*
+*.user
+*.ncb
+*.suo
+*.ilk
+*.pch
+*.pdb
+*.dep
+*.idb
+*.manifest
+*.manifest.res
+*.o
+*.d
+*.sdf
+*.opensdf
+.DS_Store
+.svn
+.deps
+.dirstamp
+profile
+
+# typedoc
+**/typedoc/doc
