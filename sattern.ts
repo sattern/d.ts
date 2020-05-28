@@ -611,7 +611,6 @@ declare namespace sattern {
          * [[Pattern.resequence]] is set to true (default) and if 
          * [[Pattern.cycle]] is set to true (default).
          * 
-         * @see [[PatternContext.step]]
          * @see [[Step]]
          */
         sequence?: (context: PatternContext) => Step | Step[];
@@ -725,7 +724,6 @@ declare namespace sattern {
          * [[Pattern.resequence]] is set to true (default) and if 
          * [[Pattern.cycle]] is set to true (default).
          * 
-         * @see [[PatternContext.step]]
          * @see [[Step]]
          */
         sequence?: (context: PatternContext) => Step | Step[];
