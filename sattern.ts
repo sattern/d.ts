@@ -1047,4 +1047,27 @@ declare namespace sattern {
          */
         map: Step.MapType;
     }
+
+    /**
+     * Represents a Controller.
+     */
+    export class File extends ObjectBase {
+        /** 
+         * Creates a File object for the specified path. Paths can be absolute 
+         * or relative to the JavaScript file being executed.
+         * 
+         * Throws an exception if the file does not exist at the specified path.
+         */
+        constructor (path: string);
+
+        /**
+         * Reads a file into memory as a string.
+         */
+        loadFileAsString:() => string;
+
+        /**
+         * Loads a file's contents into memory as a block of binary data.
+         */
+        loadFileAsData:() => ArrayBuffer;
+    }
 }
