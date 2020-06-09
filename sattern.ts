@@ -62,6 +62,11 @@ declare namespace sattern {
     }
 
     /**
+     * The main Graph object.
+     */
+    export const graph: Graph;
+
+    /**
      * Represents a set of interconnected node objects through which 
      * audio/midi/osc data flows.
      */
