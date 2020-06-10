@@ -1075,4 +1075,4 @@ declare namespace sattern {
          */
         loadFileAsData:() => ArrayBuffer;
     }
-}
+} // namespace sattern
