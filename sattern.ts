@@ -79,12 +79,12 @@ declare namespace sattern {
          * @returns The identifier of the object that was added or undefined if
          * the object can't be added to the graph.
          * 
-         *```javascript
+         * \`\`\`javascript
          * const sampler = new Sampler();
          * const pattern = new Pattern();
          * graph.add (sampler);
          * graph.add (pattern);
-         * ```
+         * \`\`\`
          */
         add (object: GraphNode): ObjectID | undefined;
 
@@ -92,10 +92,10 @@ declare namespace sattern {
          * Returns an object for the specified identifier or undefined if the 
          * object does not exist.
          * 
-         *```javascript
+         * \`\`\`javascript
          * const samplerId = graph.add (new Sampler());
          * const sampler = graph.get (samplerId);
-         * ```
+         * \`\`\`
          */
         get (identifier: ObjectID): GraphNode | undefined;
 
@@ -103,20 +103,20 @@ declare namespace sattern {
          * Connects two specified channels of two objects or one specific 
          * channel to another object's channel.
          * 
-         * ```javascript
+         * \`\`\`javascript
          * const sampler = new Sampler();
          * graph.add (sampler);
          * 
          * graph.connect (sampler.output, graph.output);
-         * ```
+         * \`\`\`
          * 
-         *```javascript
+         * \`\`\`javascript
          * const sampler = new Sampler();
          * graph.add (sampler);
          *
          * graph.connect (sampler.output [0], graph.output [0]);
          * graph.connect (sampler.output [1], graph.output [1]);
-         * ```
+         * \`\`\`
          * 
          * @see [[AudioUnit.input]]
          * @see [[AudioUnit.output]]
@@ -556,16 +556,16 @@ declare namespace sattern {
          * amount. If the offset value is less than zero then the steps will be
          * shifted to the left.
          * 
-         * ```javascript
+         * \`\`\`javascript
          * let steps = [step1, step2, step3];
          * this.offset = 1;
          * // [step3, step1, step2]
-         * ```
-         *```javascript
+         * \`\`\`
+         * \`\`\`javascript
          * let steps = [step1, step2, step3];
          * this.offset = -1;
          * // [step3, step2, step1]
-         * ```
+         * \`\`\`
          * 
          * Defaults to 0.
          */
@@ -983,7 +983,7 @@ declare namespace sattern {
          * Controller, PitchBend, Object or a list[] of any message type 
          * objects.
          * 
-         * ```javascript
+         * \`\`\`javascript
          * // Using a Map<>
          * 
          * // send a Note to one sampler, with duration of 4 and a gate of 2.
@@ -1030,7 +1030,7 @@ declare namespace sattern {
          * 
          * // send one Note to a sampler and a midi output, with duration of 4 and a gate of 2.
          * const step = new Step ([[sampler1, graph.midiOut], new Note (64)], 4, 2);
-         * ```
+         * \`\`\`
          */
 
         constructor (map?: Step.MapType | Step.ArrayType, duration?: number, gate?: number);
