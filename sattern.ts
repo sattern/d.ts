@@ -81,9 +81,9 @@ declare namespace sattern {
          * 
          * \`\`\`javascript
          * const sampler = new Sampler();
-         * const pattern = new Pattern();
+         * const soulPatch = SOULPatch ("./Reverb.soulpatch");
          * graph.add (sampler);
-         * graph.add (pattern);
+         * graph.add (soulPatch);
          * \`\`\`
          */
         add (object: GraphNode): ObjectID | undefined;
@@ -662,7 +662,7 @@ declare namespace sattern {
      * A pattern object is a special kind of voice that can generate steps that 
      * trigger some kind of target object(s) with some kind of message/data.
      */
-    export class Pattern extends GraphNode implements PatternOptions {
+    export class Pattern extends ObjectBase implements PatternOptions {
         /**
          * Creates a pattern object with the specified options.
          */
@@ -778,6 +778,16 @@ declare namespace sattern {
          */
         noteOff?: (context: PatternContext) => void;
     }
+
+    /**
+     * Adds a Pattern.
+     * 
+     * @param pattern The pattern to add.
+     * 
+     * @returns The identifier of the pattern that was added or undefined if
+     * the object can't be added.
+     */
+    export function add (pattern: Pattern): ObjectID | undefined;
 
     /**
      * Represents a pattern context.
