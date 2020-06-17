@@ -969,6 +969,21 @@ declare namespace sattern {
          * Defaults to 8192 - no pitch bend.
          */
         value: number;
+
+        /**
+         * The minimum value 0 for a pitch bend.
+         */
+        static readonly min: number;
+
+        /**
+         * The maximum value 16383 for a pitch bend.
+         */
+        static readonly max: number;
+
+        /**
+         * The "none" value 8192 for pitch bend.
+         */
+        static readonly none: number;
     }
 
     export namespace Step {
