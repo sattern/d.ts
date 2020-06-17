@@ -792,6 +792,12 @@ declare namespace sattern {
     export function add (pattern: Pattern): ObjectID | undefined;
 
     /**
+     * Returns a Pattern object for the specified identifier or undefined if 
+     * the object does not exist.
+     */
+    export function get (identifier: ObjectID): Pattern | undefined;
+
+    /**
      * Represents a pattern context.
      */
     export class PatternContext {
