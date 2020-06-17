@@ -1108,4 +1108,35 @@ declare namespace sattern {
          */
         loadFileAsData:() => ArrayBuffer;
     }
+
+    /**
+     * The main controller moved callback.
+     */
+    export var controllerMoved: (controller: Controller) => void;
+
+    /**
+     * The main pitch wheel moved callback.
+     */
+    export var pitchWheelMoved: (pitchBend: PitchBend) => void;
+
+    /**
+     * The main after touch changed callback.
+     */
+    export var aftertouchChanged: (afterTouch: AfterTouch) => void;
+
+    /**
+     * The main channel pressure changed callback.
+     */
+    export var channelPressureChanged: (channelPressure: ChannelPressure) => void;
+
+    /**
+     * The main note on callback.
+     */
+    export var noteOn: (note: Note) => void;
+
+    /**
+     * The main note off callback.
+     */
+    export var noteOff: (note: Note) => void;
+
 } // namespace sattern
