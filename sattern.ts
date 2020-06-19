@@ -417,6 +417,23 @@ declare namespace sattern {
          * The file path for this sound.
          */
         readonly file: string;
+
+        /**
+         * Splits this sound into equal parts or "slices". 
+         * 
+         * The sounds will be mapped starting from this sound's "rootKey" 
+         * property onward retaining the sound's high/low velocity values. So 
+         * if you have a sound with a root key of 1 and call slice(10) you will 
+         * get back 10 sounds mapped from rootKey 1 through rootKey 10. The 
+         * maximum number of slices is 128 (one for each midi note). 
+         * 
+         * If you have a sound with a root key of 126 and call slice(10) the 
+         * root key will wrap around to 0 and you will get back 10 sounds mapped 
+         * from rootKey 126 through rootKey 7.
+         * 
+         * @param slices The number of slices to create.
+         */
+        slice (slices: number): Sound[];
     }
 
     /**
