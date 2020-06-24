@@ -673,6 +673,12 @@ declare namespace sattern {
          * The channel pressure changed callback for this pattern.
          */
         channelPressureChanged?: (context: PatternContext) => void;
+
+        /**
+         * Represents the visualisation method to use for this pattern. The 
+         * default visualisation method is [Pattern.Visualisation.automatic]
+         */
+        visualisation?: Pattern.Visualisation;
     }
 
     /**
@@ -796,6 +802,38 @@ declare namespace sattern {
          * The note off callback for this pattern. 
          */
         noteOff?: (context: PatternContext) => void;
+
+        /**
+         * Represents the visualisation method to use for this pattern. The 
+         * default visualisation method is [Pattern.Visualisation.automatic]
+         */
+        visualisation?: Pattern.Visualisation;
+    }
+
+    export namespace Pattern {
+        /**
+         * Represents the visualisation method for a given pattern.
+         */
+        export class Visualisation {
+            /**
+             * The default visualisation method. The pattern's steps will be 
+             * shown on the Pattern visualizer if it has more than one step 
+             * with a non undefined target.
+             */
+            static readonly automatic: number;
+            
+            /**
+             * The pattern's steps will be shown on the Pattern visualizer if 
+             * it has more than one step.
+             */
+            static readonly always: number;
+
+            /**
+             * The pattern's steps will be never be shown on the Pattern 
+             * visualizer.
+             */
+            static readonly never: number;
+        }
     }
 
     /**
