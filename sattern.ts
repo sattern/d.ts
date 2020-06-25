@@ -804,33 +804,34 @@ declare namespace sattern {
         noteOff?: (context: PatternContext) => void;
 
         /**
-         * Represents the visualisation method to use for this pattern. The 
-         * default visualisation method is [Pattern.Visualisation.automatic]
+         * Represents the visualisation method to use for this Pattern's voices. 
+         * The default visualisation method is [Pattern.Visualisation.automatic]
          */
         visualisation?: Pattern.Visualisation;
     }
 
     export namespace Pattern {
         /**
-         * Represents the visualisation method for a given pattern.
+         * Represents the visualisation method for a pattern's voices.
          */
         export class Visualisation {
             /**
-             * The default visualisation method. The pattern's steps will be 
-             * shown on the Pattern visualizer if it has more than one step 
-             * with a non undefined target.
+             * The default visualisation method. 
+             * 
+             * Steps will be shown on the Pattern visualizer if more than one 
+             * step with a non-undefined target is returned from 
+             * [Pattern.sequence].
              */
             static readonly automatic: number;
             
             /**
-             * The pattern's steps will be shown on the Pattern visualizer if 
-             * it has more than one step.
+             * Steps will be shown on the Pattern visualizer if more than one 
+             * step is returned from [Pattern.sequence].
              */
             static readonly always: number;
 
             /**
-             * The pattern's steps will be never be shown on the Pattern 
-             * visualizer.
+             * Steps will be never be shown on the Pattern visualizer.
              */
             static readonly never: number;
         }
