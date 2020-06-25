@@ -61,6 +61,13 @@ declare namespace sattern {
          * doing.
         */
        static executionTimeout: number;
+    
+       /**
+        * Whether or not to latch incoming notes.
+        * 
+        * Defaults to false.
+        */
+       static latch: boolean;
     }
 
     /**
