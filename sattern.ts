@@ -500,7 +500,7 @@ declare namespace sattern {
         /**
          * Gets or sets the message received callback for this object.
          */
-        messageReceived?: (message: OSCMessage) => void;
+        onMessageReceived?: (message: OSCMessage) => void;
     }
 
     /**
@@ -651,7 +651,7 @@ declare namespace sattern {
          * 
          * This callback is called when this pattern progresses to a new step.
          */
-        advanced?: (context: PatternContext) => void;
+        onAdvanced?: (context: PatternContext) => void;
 
         /**
          * The ended callback for this pattern. 
@@ -659,27 +659,37 @@ declare namespace sattern {
          * This callback is called when this pattern reaches the end of the 
          * last step.
          */
-        ended?: (context: PatternContext) => void;
+        onEnded?: (context: PatternContext) => void;
 
         /**
          * The controller moved callback for this pattern.
          */
-        controllerMoved?: (context: PatternContext) => void;
+        onControllerMoved?: (context: PatternContext) => void;
 
         /**
          * The pitch wheel moved callback for this pattern.
          */
-        pitchWheelMoved?: (context: PatternContext) => void;
+        onPitchWheelMoved?: (context: PatternContext) => void;
 
         /**
          * The after touch changed callback for this pattern.
          */
-        aftertouchChanged?: (context: PatternContext) => void;
+        onAfterTouchChanged?: (context: PatternContext) => void;
 
         /**
          * The channel pressure changed callback for this pattern.
          */
-        channelPressureChanged?: (context: PatternContext) => void;
+        onChannelPressureChanged?: (context: PatternContext) => void;
+
+        /**
+         * The note on callback for this pattern. 
+         */
+        onNoteOn?: (context: PatternContext) => void;
+
+        /**
+         * The note off callback for this pattern. 
+         */
+        onNoteOff?: (context: PatternContext) => void;
 
         /**
          * Represents the visualisation method to use for this pattern. The 
@@ -770,7 +780,7 @@ declare namespace sattern {
          * 
          * This callback is called when this pattern progresses to a new step.
          */
-        advanced?: (context: PatternContext) => void;
+        onAdvanced?: (context: PatternContext) => void;
 
         /**
          * The ended callback for this pattern. 
@@ -778,37 +788,37 @@ declare namespace sattern {
          * This callback is called when this pattern reaches the end of the 
          * last step.
          */
-        ended?: (context: PatternContext) => void;
+        onEnded?: (context: PatternContext) => void;
 
         /**
          * The controller moved callback for this pattern.
          */
-        controllerMoved?: (context: PatternContext) => void;
+        onControllerMoved?: (context: PatternContext) => void;
 
         /**
          * The pitch wheel moved callback for this pattern.
          */
-        pitchWheelMoved?: (context: PatternContext) => void;
+        onPitchWheelMoved?: (context: PatternContext) => void;
 
         /**
          * The after touch changed callback for this pattern.
          */
-        aftertouchChanged?: (context: PatternContext) => void;
+        onAfterTouchChanged?: (context: PatternContext) => void;
 
         /**
          * The channel pressure changed callback for this pattern.
          */
-        channelPressureChanged?: (context: PatternContext) => void;
+        onChannelPressureChanged?: (context: PatternContext) => void;
 
         /**
          * The note on callback for this pattern. 
          */
-        noteOn?: (context: PatternContext) => void;
+        onNoteOn?: (context: PatternContext) => void;
 
         /**
          * The note off callback for this pattern. 
          */
-        noteOff?: (context: PatternContext) => void;
+        onNoteOff?: (context: PatternContext) => void;
 
         /**
          * Represents the visualisation method to use for this Pattern's voices. 
@@ -894,9 +904,9 @@ declare namespace sattern {
         /**
          * The current after touch object.
          * 
-         * @see [[AfterTouch]]
+         * @see [[Aftertouch]]
          */
-        readonly aftertouch: AfterTouch | undefined;
+        readonly aftertouch: Aftertouch | undefined;
 
         /**
          * The current after channel pressure object.
@@ -923,9 +933,9 @@ declare namespace sattern {
     }
 
     /**
-     * Represents an AfterTouch
+     * Represents an Aftertouch
      */
-    export class AfterTouch extends MidiMessage {
+    export class Aftertouch extends MidiMessage {
         /**
          * Creates an after-touch object with the specified values.
          * 
@@ -1164,42 +1174,42 @@ declare namespace sattern {
         /**
          * Reads a file into memory as a string.
          */
-        loadFileAsString:() => string;
+        loadFileAsString(): string;
 
         /**
          * Loads a file's contents into memory as a block of binary data.
          */
-        loadFileAsData:() => ArrayBuffer;
+        loadFileAsData(): ArrayBuffer;
     }
 
     /**
      * The main controller moved callback.
      */
-    export var controllerMoved: (controller: Controller) => void;
+    export var onControllerMoved: (controller: Controller) => void;
 
     /**
      * The main pitch wheel moved callback.
      */
-    export var pitchWheelMoved: (pitchBend: PitchBend) => void;
+    export var onPitchWheelMoved: (pitchBend: PitchBend) => void;
 
     /**
      * The main after touch changed callback.
      */
-    export var aftertouchChanged: (afterTouch: AfterTouch) => void;
+    export var onAftertouchChanged: (afterTouch: Aftertouch) => void;
 
     /**
      * The main channel pressure changed callback.
      */
-    export var channelPressureChanged: (channelPressure: ChannelPressure) => void;
+    export var onChannelPressureChanged: (channelPressure: ChannelPressure) => void;
 
     /**
      * The main note on callback.
      */
-    export var noteOn: (note: Note) => void;
+    export var onNoteOn: (note: Note) => void;
 
     /**
      * The main note off callback.
      */
-    export var noteOff: (note: Note) => void;
+    export var onNoteOff: (note: Note) => void;
 
 } // namespace sattern
