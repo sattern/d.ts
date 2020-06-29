@@ -553,7 +553,7 @@ declare namespace sattern {
          * get/set new parameter values in any [[Pattern]] callback.
          * 
          * Usually parameters are sent with each step inside the 
-         * [[Pattern.sequence]] callback and this is here for that one special 
+         * [[Pattern.onSequence]] callback and this is here for that one special 
          * case where you'd want to set parameters directly from a 
          * [[Pattern.controllerMoved]], [[Pattern.aftertouchChanged]] or other
          * callback(s) that do not allow adding steps.
@@ -622,9 +622,9 @@ declare namespace sattern {
 
         /**
          * Whether or not to re-sequence this pattern once it reaches the end. 
-         * If this is set to false then [[Pattern.sequence]] callback will not 
+         * If this is set to false then [[Pattern.onSequence]] callback will not 
          * be called and the last sequence of steps will be used again. If this 
-         * is set to true (default) then the [[Pattern.sequence]] callback will 
+         * is set to true (default) then the [[Pattern.onSequence]] callback will 
          * be called when this pattern reaches the end to get a new set of steps 
          * for the sequence.
          * 
@@ -644,7 +644,7 @@ declare namespace sattern {
          * 
          * @see [[Step]]
          */
-        sequence?: (context: PatternContext) => Step | Step[];
+        onSequence?: (context: PatternContext) => Step | Step[];
 
         /**
          * The advanced callback for this pattern. 
@@ -751,9 +751,9 @@ declare namespace sattern {
 
         /**
          * Whether or not to re-sequence this pattern once it reaches the end. 
-         * If this is set to false then [[Pattern.sequence]] callback will not 
+         * If this is set to false then [[Pattern.onSequence]] callback will not 
          * be called and the last sequence of steps will be used again. If this 
-         * is set to true (default) then the [[Pattern.sequence]] callback will 
+         * is set to true (default) then the [[Pattern.onSequence]] callback will 
          * be called when this pattern reaches the end to get a new set of steps 
          * for the sequence.
          * 
@@ -773,7 +773,7 @@ declare namespace sattern {
          * 
          * @see [[Step]]
          */
-        sequence?: (context: PatternContext) => Step | Step[];
+        onSequence?: (context: PatternContext) => Step | Step[];
 
         /**
          * The advanced callback for this pattern. 
@@ -837,13 +837,13 @@ declare namespace sattern {
              * 
              * Steps will be shown on the Pattern visualizer if more than one 
              * step with a non-undefined target is returned from 
-             * [Pattern.sequence].
+             * [Pattern.onSequence].
              */
             static readonly automatic: number;
             
             /**
              * Steps will be shown on the Pattern visualizer if more than one 
-             * step is returned from [Pattern.sequence].
+             * step is returned from [Pattern.onSequence].
              */
             static readonly always: number;
 
