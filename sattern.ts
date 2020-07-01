@@ -677,14 +677,14 @@ declare namespace sattern {
          * 
          * @see [[Step]]
          */
-        onSequence?: (context: PatternContext) => Step | Step[];
+        onSequence?: (context: Pattern.Context) => Step | Step[];
 
         /**
          * The advanced callback for this pattern. 
          * 
          * This callback is called when this pattern progresses to a new step.
          */
-        onAdvanced?: (context: PatternContext) => void;
+        onAdvanced?: (context: Pattern.Context) => void;
 
         /**
          * The ended callback for this pattern. 
@@ -692,37 +692,37 @@ declare namespace sattern {
          * This callback is called when this pattern reaches the end of the 
          * last step.
          */
-        onEnded?: (context: PatternContext) => void;
+        onEnded?: (context: Pattern.Context) => void;
 
         /**
          * The controller moved callback for this pattern.
          */
-        onControllerMoved?: (context: PatternContext) => void;
+        onControllerMoved?: (context: Pattern.Context) => void;
 
         /**
          * The pitch wheel moved callback for this pattern.
          */
-        onPitchWheelMoved?: (context: PatternContext) => void;
+        onPitchWheelMoved?: (context: Pattern.Context) => void;
 
         /**
          * The after touch changed callback for this pattern.
          */
-        onAfterTouchChanged?: (context: PatternContext) => void;
+        onAfterTouchChanged?: (context: Pattern.Context) => void;
 
         /**
          * The channel pressure changed callback for this pattern.
          */
-        onChannelPressureChanged?: (context: PatternContext) => void;
+        onChannelPressureChanged?: (context: Pattern.Context) => void;
 
         /**
          * The note on callback for this pattern. 
          */
-        onNoteOn?: (context: PatternContext) => void;
+        onNoteOn?: (context: Pattern.Context) => void;
 
         /**
          * The note off callback for this pattern. 
          */
-        onNoteOff?: (context: PatternContext) => void;
+        onNoteOff?: (context: Pattern.Context) => void;
 
         /**
          * Represents the visualisation method to use for this pattern. The 
@@ -806,14 +806,14 @@ declare namespace sattern {
          * 
          * @see [[Step]]
          */
-        onSequence?: (context: PatternContext) => Step | Step[];
+        onSequence?: (context: Pattern.Context) => Step | Step[];
 
         /**
          * The advanced callback for this pattern. 
          * 
          * This callback is called when this pattern progresses to a new step.
          */
-        onAdvanced?: (context: PatternContext) => void;
+        onAdvanced?: (context: Pattern.Context) => void;
 
         /**
          * The ended callback for this pattern. 
@@ -821,37 +821,37 @@ declare namespace sattern {
          * This callback is called when this pattern reaches the end of the 
          * last step.
          */
-        onEnded?: (context: PatternContext) => void;
+        onEnded?: (context: Pattern.Context) => void;
 
         /**
          * The controller moved callback for this pattern.
          */
-        onControllerMoved?: (context: PatternContext) => void;
+        onControllerMoved?: (context: Pattern.Context) => void;
 
         /**
          * The pitch wheel moved callback for this pattern.
          */
-        onPitchWheelMoved?: (context: PatternContext) => void;
+        onPitchWheelMoved?: (context: Pattern.Context) => void;
 
         /**
          * The after touch changed callback for this pattern.
          */
-        onAfterTouchChanged?: (context: PatternContext) => void;
+        onAfterTouchChanged?: (context: Pattern.Context) => void;
 
         /**
          * The channel pressure changed callback for this pattern.
          */
-        onChannelPressureChanged?: (context: PatternContext) => void;
+        onChannelPressureChanged?: (context: Pattern.Context) => void;
 
         /**
          * The note on callback for this pattern. 
          */
-        onNoteOn?: (context: PatternContext) => void;
+        onNoteOn?: (context: Pattern.Context) => void;
 
         /**
          * The note off callback for this pattern. 
          */
-        onNoteOff?: (context: PatternContext) => void;
+        onNoteOff?: (context: Pattern.Context) => void;
 
         /**
          * Represents the visualisation method to use for this Pattern's voices. 
@@ -861,6 +861,58 @@ declare namespace sattern {
     }
 
     export namespace Pattern {
+        /**
+         * Represents a pattern context.
+         */
+        export class Context {
+            /**
+             * The current note object.
+             * 
+             * @see [[Note]]
+             */
+            readonly note: Note | undefined;
+
+            /**
+             * Whether this note is a note on message. 
+             * Defaults to false.
+             */
+            readonly isNoteOn: boolean;
+
+            /**
+             * The current controller object.
+             * 
+             * @see [[Controller]]
+             */
+            readonly controller: Controller | undefined;;
+
+            /**
+             * The current pitch bend object.
+             * 
+             * @see [[PitchBend]]
+             */
+            readonly pitchBend: PitchBend | undefined;
+
+            /**
+             * The current after touch object.
+             * 
+             * @see [[Aftertouch]]
+             */
+            readonly aftertouch: Aftertouch | undefined;
+
+            /**
+             * The current after channel pressure object.
+             * 
+             * @see [[ChannelPressure]]
+             */
+            readonly channelPressure: ChannelPressure | undefined;
+
+            /**
+             * The number of times the pattern has played from beginning to end.
+             * Defaults to 0.
+             */
+            readonly count: number;
+        }
+
         /**
          * Represents the visualisation method for a pattern's voices.
          */
@@ -902,58 +954,6 @@ declare namespace sattern {
      * the object does not exist.
      */
     export function get (identifier: ObjectID): Pattern | undefined;
-
-    /**
-     * Represents a pattern context.
-     */
-    export class PatternContext {
-        /**
-         * The current note object.
-         * 
-         * @see [[Note]]
-         */
-        readonly note: Note | undefined;
-
-        /**
-         * Whether this note is a note on message. 
-         * Defaults to false.
-         */
-        readonly isNoteOn: boolean;
-
-        /**
-         * The current controller object.
-         * 
-         * @see [[Controller]]
-         */
-        readonly controller: Controller | undefined;;
-
-        /**
-         * The current pitch bend object.
-         * 
-         * @see [[PitchBend]]
-         */
-        readonly pitchBend: PitchBend | undefined;
-
-        /**
-         * The current after touch object.
-         * 
-         * @see [[Aftertouch]]
-         */
-        readonly aftertouch: Aftertouch | undefined;
-
-        /**
-         * The current after channel pressure object.
-         * 
-         * @see [[ChannelPressure]]
-         */
-        readonly channelPressure: ChannelPressure | undefined;
-
-        /**
-         * The number of times the pattern has played from beginning to end.
-         * Defaults to 0.
-         */
-        readonly count: number;
-    }
 
     /**
      * Represents a MIDI message.
