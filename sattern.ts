@@ -71,6 +71,39 @@ declare namespace sattern {
     }
 
     /**
+     * The main MidiKeyboardState object.
+     */
+    export const midiKeyboardState: MidiKeyboardState;
+
+    /**
+     * Represents a piano keyboard.
+     */
+    export class MidiKeyboardState extends ObjectBase {
+        /**
+         * Turns the specified note on.
+         * 
+         * @param args 
+         */
+        noteOn (note: Note): void;
+
+        /**
+         * Turns the specified note off.
+         * 
+         * @param args 
+         */
+        noteOff (note: Note): void;
+
+        /**
+         * Turns off any currently-down notes for the specified midi channel. 
+         * If you pass 0 for the midi channel, it will turn off all notes on all 
+         * channels.
+         * 
+         * @param args 
+         */
+        allNotesOff (channel: number): void;
+    }
+
+    /**
      * The main Graph object.
      */
     export const graph: Graph;
