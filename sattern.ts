@@ -1181,7 +1181,7 @@ declare namespace sattern {
         duration: number;
 
         /**
-         * The duration for this step.
+         * The gate for this step.
          * Defaults to 4 | duration.
          */
         gate: number;
