@@ -45,6 +45,11 @@ declare namespace sattern {
     export type Channel = number;
 
     /**
+     * The process type. This will either be "standalone" or "plugin".
+     */
+    export const processType: string;
+
+    /**
      * Represents common Sattern settings
      */
     export class Settings {
