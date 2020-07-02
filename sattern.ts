@@ -945,20 +945,25 @@ declare namespace sattern {
     }
 
     /**
-     * Adds a Pattern.
+     * Adds a Pattern or list of Patterns to the global object.
      * 
-     * @param pattern The pattern to add.
+     * @param pattern The pattern or patterns to add.
      * 
-     * @returns The identifier of the pattern that was added or undefined if
-     * the object can't be added.
+     * @returns The identifier or a list of identifiers of the pattern(s) that 
+     * were added or undefined if the object(s) can't be added.
      */
-    export function add (pattern: Pattern): ObjectID | undefined;
+    export function add (pattern: Pattern | Pattern[]): ObjectID | ObjectID[] | undefined;
 
     /**
      * Returns a Pattern object for the specified identifier or undefined if 
      * the object does not exist.
      */
     export function get (identifier: ObjectID): Pattern | undefined;
+
+    /**
+     * Returns all Pattern objects that have been added.
+     */
+    export const patterns: Pattern[];
 
     /**
      * Represents a MIDI message.
