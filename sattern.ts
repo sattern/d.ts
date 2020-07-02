@@ -1063,6 +1063,24 @@ declare namespace sattern {
          * Returns true if this Note is a "note on" message.
          */
         readonly on: boolean;
+
+        /**
+         * Returns a new Note which has the same velocity and channel as this 
+         * one, but with a different key.
+         */
+        withKey (key: number): Note;
+
+        /**
+         * Returns a new Note which has the same key and channel as this one, 
+         * but with a different velocity.
+         */
+        withVelocity (velocity: number): Note;
+
+        /**
+         * Returns a new Note which has the same key and velocity as this one, 
+         * but with a different channel.
+         */
+        withChannel (channel: number): Note;
     }
 
     export class PitchBend extends MidiMessage {
