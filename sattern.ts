@@ -770,6 +770,32 @@ declare namespace sattern {
         cycle?: boolean;
 
         /**
+         * The offset for this pattern. If the offset value is greater than 
+         * zero then the steps will be shifted to the right by the offset 
+         * amount. If the offset value is less than zero then the steps will be
+         * shifted to the left.
+         * 
+         * \`\`\`javascript
+         * let steps = [step1, step2, step3];
+         * this.offset = 1;
+         * // [step3, step1, step2]
+         * \`\`\`
+         * \`\`\`javascript
+         * let steps = [step1, step2, step3];
+         * this.offset = -1;
+         * // [step3, step2, step1]
+         * \`\`\`
+         * 
+         * Defaults to 0.
+         */
+        offset?: number;
+
+        /**
+         * Whether or not this pattern is reversed.
+         */
+        reversed?: boolean;
+
+        /**
          * The key range for this pattern. 
          * Defaults to [0, 127]
          */
