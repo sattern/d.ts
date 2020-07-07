@@ -942,6 +942,26 @@ declare namespace sattern {
              * Defaults to 0.
              */
             readonly count: number;
+
+            /**
+             * The clock multiplier to use for this pattern context.
+             */
+            clockMultiplier?: number;
+
+            /**
+             * Whether or not this pattern context is reversed.
+            */
+            reversed?: boolean;
+
+            /**
+             * The offset for this pattern context. If the offset value is 
+             * greater than zero then the steps will be shifted to the right by 
+             * the offset amount. If the offset value is less than zero then the 
+             * steps will be shifted to the left.
+             * 
+             * Defaults to 0.
+             */
+            offset?: number;
         }
 
         /**
