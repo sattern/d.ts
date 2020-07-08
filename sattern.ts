@@ -1319,4 +1319,20 @@ declare namespace sattern {
      */
     export var onNoteOff: (note: Note) => void;
 
+    /**
+     * Represents a random number generator.
+     */
+    export class Random extends ObjectBase {
+        /**
+         * Returns the next random number, limited to a given range.
+         * 
+         * @param min The minimum value (inclusive)
+         *            Defaults to 0
+         * 
+         * @param max The maximum value (exclusive)
+         *            Defaults to 0x7fffffff
+         */
+        nextInt (min?: number, max?: number): number;
+    }
+
 } // namespace sattern
