@@ -1043,6 +1043,24 @@ declare namespace sattern {
          * The amount for this after-touch
          */
         amount: number | 0;
+
+        /**
+         * Returns a new Aftertouch which has the same amount and channel as 
+         * this one, but with a different key.
+         */
+        withKey (key: number): Aftertouch;
+
+        /**
+         * Returns a new Aftertouch which has the same key and channel as this 
+         * one, but with a different amount.
+         */
+        withAmount (amount: number): Aftertouch;
+
+        /**
+         * Returns a new Aftertouch which has the same key and amount as this 
+         * one, but with a different channel.
+         */
+        withChannel (channel: number): Aftertouch;
     }
 
     /**
@@ -1063,6 +1081,18 @@ declare namespace sattern {
          * The pressure for this after-touch
          */
         pressure: number | 0;
+
+        /**
+         * Returns a new ChannelPressure which has the same channel as this 
+         * one, but with a different pressure.
+         */
+        withAmount (pressure: number): ChannelPressure;
+
+        /**
+         * Returns a new ChannelPressure which has the same pressure as this 
+         * one, but with a different channel.
+         */
+        withChannel (channel: number): ChannelPressure;
     }
 
     /**
@@ -1089,6 +1119,24 @@ declare namespace sattern {
          * The value for this controller.
          */
         value: number | 0;
+
+        /**
+         * Returns a new Controller which has the same number and channel as 
+         * this one, but with a different number.
+         */
+        withNumber (number: number): Controller;
+
+        /**
+         * Returns a new Controller which has the same number and channel as 
+         * this one, but with a different value.
+         */
+        withValue (value: number): Controller;
+
+        /**
+         * Returns a new Controller which has the same number and value as this 
+         * one, but with a different channel.
+         */
+        withChannel (channel: number): Controller;
     }
 
     /**
