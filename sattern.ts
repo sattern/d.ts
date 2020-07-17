@@ -1312,6 +1312,24 @@ declare namespace sattern {
          * The map objet for this step.
          */
         map: Step.MapType;
+
+        /**
+         * Returns a new Step which has the same gate and map as this one, 
+         * but with a different duration.
+         */
+        withDuration (duration: number): Step;
+
+        /**
+         * Returns a new Step which has the same duration and map as this one, 
+         * but with a different gate.
+         */
+        withGate (gate: number): Step;
+
+        /**
+         * Returns a new Step which has the same duration and gate as this one, 
+         * but with a different map.
+         */
+        withMap (map: Step.MapType): Step;
     }
 
     /**
