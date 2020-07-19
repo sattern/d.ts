@@ -991,14 +991,23 @@ declare namespace sattern {
     }
 
     /**
-     * Adds a Pattern or list of Patterns to the global object.
+     * Adds a Pattern to the global object.
      * 
-     * @param pattern The pattern or patterns to add.
+     * @param pattern The pattern to add.
      * 
-     * @returns The identifier or a list of identifiers of the pattern(s) that 
-     * were added or undefined if the object(s) can't be added.
+     * @returns The identifier of the pattern that was added or undefined if 
+     * the object can't be added.
      */
-    export function add (pattern: Pattern | Pattern[]): ObjectID | ObjectID[] | undefined;
+    export function add (pattern: Pattern): ObjectID | undefined;
+
+    /**
+     * Adds a list of Patterns to the global object.
+     * 
+     * @param pattern The patterns to add.
+     * 
+     * @returns A list of identifiers of the patterns that were added.
+     */
+    export function add (patterns: Pattern[]): ObjectID[];
 
     /**
      * Returns a Pattern object for the specified identifier or undefined if 
