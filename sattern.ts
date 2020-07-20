@@ -53,20 +53,6 @@ declare namespace sattern {
      * Represents common Sattern settings
      */
     export class Settings {
-        /** 
-         * The timeout in milliseconds to wait before terminating execution.
-         * 
-         * The default value is 5.0 milliseconds and is here as a safeguard so 
-         * that we don't completely stall the host process. You can change this 
-         * to be higher but this will most likely result in audio clicks/pops. 
-         * 
-         * 5.0 milliseconds should be more than enough time to do any sort of 
-         * operation and the internal default value of this property may change 
-         * at anytime in the future. Only use this if you know what you're 
-         * doing.
-        */
-       static executionTimeout: number;
-    
        /**
         * Whether or not to latch incoming notes.
         * 
