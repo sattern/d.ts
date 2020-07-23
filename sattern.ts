@@ -627,6 +627,12 @@ declare namespace sattern {
         reversed?: boolean;
 
         /**
+         * The midi channel for this pattern.
+         * Defaults to -1, all channels.
+         */
+        channel?: number;
+
+        /**
          * The key range for this pattern. 
          * Defaults to [0, 127]
          */
@@ -780,6 +786,12 @@ declare namespace sattern {
          * Whether or not this pattern is reversed.
          */
         reversed?: boolean;
+
+        /**
+         * The midi channel for this pattern.
+         * Defaults to -1, all channels.
+         */
+        channel?: number;
 
         /**
          * The key range for this pattern. 
