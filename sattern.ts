@@ -92,6 +92,12 @@ declare namespace sattern {
          * @param args 
          */
         allNotesOff (channel: number): void;
+
+        /**
+         * Returns true if the specified key is currently held down for the 
+         * specified channel.
+         */
+        isNoteOn (note: number, channel?: number): boolean;
     }
 
     /**
