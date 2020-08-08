@@ -1414,4 +1414,42 @@ declare namespace sattern {
         nextInt (min?: number, max?: number): number;
     }
 
+    /**
+     * Represents a Compressor.
+     * @beta
+     */
+    export class Compressor extends AudioUnit {
+        /** 
+         * Creates a Compressor object.
+         */
+        constructor();
+
+        /**
+         * The threshold in dB for this object.
+         */
+        threshold: number;
+
+        /**
+         * The ratio for this object. >= 1.0
+         */
+        ratio: number;
+
+        /**
+         * The attack in milliseconds for this object.
+         */
+        attack: number;
+
+        /**
+         * The release in milliseconds for this object.
+         */
+        release: number;
+
+        /**
+         * Indicates whether or not the sidechain input is enabled. If this is 
+         * set to true then inputs 2 and 3 can be used as sidechain inputs for 
+         * this object.
+         */
+        sideChainEnabled: boolean;
+    }
+
 } // namespace sattern
