@@ -242,6 +242,29 @@ declare namespace sattern {
          * Defaults to 0.0; -1.0 = left, 0.0 = centre, 1.0 = right.
          */
         pan: number;
+
+        /**
+         * Connects this object's output to the specified destination object's 
+         * input ("output" if the destination is a graph).
+         * 
+         * 
+         */
+
+        /**
+         * Connects this object's output to the specified destination object's 
+         * input ("output" if the destination is a graph).
+         * 
+         * @param destination   The AudioUnit | Graph to which to connect.
+         * @param outputIndex   An index specifying which output of this 
+         *                      AudioUnit to connect to the destination.
+         * @param inputIndex    An index describing which input of the 
+         *                      destination you want to connect this AudioUnit to.
+         * 
+         * Returns a reference to the destination [[AudioUnit]] object allowing 
+         * you to chain multiple connect() calls. If the destination is a Graph 
+         * object, connect() returns undefined.
+         */
+        connect (destination: AudioUnit | Graph, outputIndex?: number, inputIndex?: number): AudioUnit | undefined;
     }
 
     /**
