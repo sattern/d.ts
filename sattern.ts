@@ -530,6 +530,18 @@ declare namespace sattern {
     }
 
     /**
+     * Represents an OSC Bundle.
+     */
+     export class OSCBundle extends ObjectBase {
+        /**
+         * Returns the messages contained inside this bundle.
+         * 
+         * http://opensoundcontrol.org/spec-1_0
+         */
+        readonly messages: OSCMessage[];
+    }
+
+    /**
      * Represents an OSC receiver.
      * 
      * An OSCReceiver object cam receive OSC messages on a specified UDP port.
@@ -554,6 +566,11 @@ declare namespace sattern {
          * Gets or sets the message received callback for this object.
          */
         onMessageReceived?: (message: OSCMessage) => void;
+
+        /**
+         * Gets or sets the bundle received callback for this object.
+         */
+        onBundleReceived?: (message: OSCBundle) => void;
     }
 
     /**
